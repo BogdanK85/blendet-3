@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { FiSearch } from 'react-icons/fi';
 import { FormBtn, InputSearch, SearchFormStyled } from './SearchForm.styled';
-import { addTodo } from 'redux/actions';
+import { addTodo } from 'redux/todoSlice';
 import { useDispatch } from 'react-redux';
 
 export const SearchForm = ({ onSubmit }) => {
