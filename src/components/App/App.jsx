@@ -5,6 +5,7 @@ import {
   Section,
   Text,
   TodoList,
+  Filter,
 } from 'components';
 import { useSelector } from 'react-redux';
 import { selectTodos } from 'redux/selectors';
@@ -22,7 +23,10 @@ export const App = () => {
           {todos.length === 0 ? (
             <Text textAlign="center">There are no any todos ... </Text>
           ) : (
-            <TodoList />
+            <>
+              <Filter />
+              <TodoList />
+            </>
           )}
         </Container>
       </Section>

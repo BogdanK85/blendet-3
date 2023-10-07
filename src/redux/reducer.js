@@ -1,14 +1,31 @@
-import { ADD_TODO, DELETE_TODO } from './actionTypes';
+import { combineReducers } from 'redux';
+import { ADD_FILTER, ADD_TODO, DELETE_TODO } from './actionTypes';
+const todoInitialState = [];
 
-const todoInitialState = { items: [] };
-
-export const todoReducer = (state = todoInitialState, { type, payload }) => {
+const todoReducer = (state = todoInitialState, { type, payload }) => {
   switch (type) {
     case ADD_TODO:
-      return { items: [...state.items, payload] };
+      return [...state, payload];
     case DELETE_TODO:
-      return { items: state.items.filter(todo => todo.id !== payload) };
+      return state.filter(todo => todo.id !== payload);
     default:
       return state;
   }
 };
+
+const filterInitialState = '';
+
+const filterReducer = (state = filterInitialState, { type, payload }) => {
+  switch (type) {
+    case ADD_FILTER:
+      return payload;
+
+    default:
+      return state;
+  }
+};
+
+export const rootReducer = combineReducers({
+  todos: todoReducer,
+  filter: filterReducer,
+});
