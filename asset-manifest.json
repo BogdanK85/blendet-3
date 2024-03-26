@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/blendet-3/static/css/main.c3d5249d.css",
-    "main.js": "/blendet-3/static/js/main.b928ae4a.js",
-    "index.html": "/blendet-3/index.html",
-    "main.c3d5249d.css.map": "/blendet-3/static/css/main.c3d5249d.css.map",
-    "main.b928ae4a.js.map": "/blendet-3/static/js/main.b928ae4a.js.map"
+    "main.css": "/notes/static/css/main.c3d5249d.css",
+    "main.js": "/notes/static/js/main.62766e43.js",
+    "index.html": "/notes/index.html",
+    "main.c3d5249d.css.map": "/notes/static/css/main.c3d5249d.css.map",
+    "main.62766e43.js.map": "/notes/static/js/main.62766e43.js.map"
   },
   "entrypoints": [
     "static/css/main.c3d5249d.css",
-    "static/js/main.b928ae4a.js"
+    "static/js/main.62766e43.js"
   ]
 }
