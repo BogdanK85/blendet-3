@@ -1,9 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { nanoid } from 'nanoid';
 
+const loadTodosFromLocalStorage = () => {
+  const storedTodos = localStorage.getItem('todos');
+  return storedTodos ? JSON.parse(storedTodos) : [];
+};
+
 const todoSlice = createSlice({
   name: 'todos',
-  initialState: [],
+  initialState: loadTodosFromLocalStorage(),
   reducers: {
     addTodo: {
       prepare: text => {
@@ -15,11 +20,15 @@ const todoSlice = createSlice({
         };
       },
       reducer: (state, action) => {
-        return [...state, action.payload];
+        const newState = [...state, action.payload];
+        localStorage.setItem('todos', JSON.stringify(newState));
+        return newState;
       },
     },
     deleteTodo: (state, action) => {
-      return state.filter(todo => todo.id !== action.payload);
+      const newState = state.filter(todo => todo.id !== action.payload);
+      localStorage.setItem('todos', JSON.stringify(newState));
+      return newState;
     },
   },
 });

@@ -13,7 +13,7 @@ export const Header = () => {
           <HeaderWrapper>
             <IoLogoReact size="40px" color={theme.colors.accent} />
 
-            <NavText>Lesson 4</NavText>
+            <NavText>Notes</NavText>
           </HeaderWrapper>
         </Container>
       </NavBar>

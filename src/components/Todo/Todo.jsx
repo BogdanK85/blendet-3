@@ -11,7 +11,7 @@ export const Todo = ({ text, counter, id }) => {
     <>
       <TodoWrapper>
         <Text textAlign="center" marginBottom="20px">
-          TODO #{counter}
+          NOTE #{counter}
         </Text>
         <Text>{text}</Text>
         <DeleteButton type="button" onClick={() => dispatch(deleteTodo(id))}>

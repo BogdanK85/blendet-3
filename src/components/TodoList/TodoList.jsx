@@ -1,4 +1,5 @@
 import { Grid, GridItem, Todo } from 'components';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectFilter, selectTodos } from 'redux/selectors';
 
@@ -8,9 +9,15 @@ export const TodoList = () => {
 
   console.log(filter);
 
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
   const filteredTodos = () =>
-    todos.filter(todo =>
-      todo.text.toLowerCase().includes(filter.toLowerCase())
+    todos.filter(
+      todo =>
+        typeof todo.text === 'string' &&
+        todo.text.toLowerCase().includes(filter.toLowerCase())
     );
   return (
     <Grid>
