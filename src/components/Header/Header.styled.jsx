@@ -26,3 +26,7 @@ export const NavText = styled.h3`
 
   margin-bottom: 0;
 `;
+
+export const Logo = styled.img`
+  width: 100px;
+`;

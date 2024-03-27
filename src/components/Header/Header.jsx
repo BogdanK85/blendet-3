@@ -1,5 +1,5 @@
-import { IoLogoReact } from 'react-icons/io5';
-import { NavBar, HeaderWrapper, NavText } from './Header.styled';
+import logo from '../../styles/logo.png';
+import { NavBar, HeaderWrapper, NavText, Logo } from './Header.styled';
 import { Container } from 'components';
 import { useTheme } from '@emotion/react';
 
@@ -11,7 +11,7 @@ export const Header = () => {
       <NavBar>
         <Container>
           <HeaderWrapper>
-            <IoLogoReact size="40px" color={theme.colors.accent} />
+            <Logo src={logo} size="40px" color={theme.colors.accent} />
 
             <NavText>Notes</NavText>
           </HeaderWrapper>
